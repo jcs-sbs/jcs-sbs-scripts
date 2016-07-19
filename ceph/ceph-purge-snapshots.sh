@@ -1,5 +1,5 @@
 #!/bin/bash
-user="cinder"
+#user="cinder"
 conf="/etc/ceph/ceph.conf"
 pool="sbs"
 volume_id=$1
@@ -11,4 +11,4 @@ then
     exit
 fi    
 
-rbd --user $user --conf $conf snap purge $pool/"volume-$volume_id"
+rbd --conf $conf snap purge $pool/"volume-$volume_id"

@@ -1,8 +1,8 @@
 #!/bin/bash
-user="cinder"
+#user="cinder"
 conf="/etc/ceph/ceph.conf"
 pool="sbs"
-volume_id="volume_id"
+volume_id=$1
 
 if [ -z $1 ];
 then
@@ -10,4 +10,4 @@ then
     exit
 fi
 
-rbd --user $user --conf $conf -p $pool rm "volume-$volume_id"
+rbd --conf $conf -p $pool rm "volume-$volume_id"
